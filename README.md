@@ -58,18 +58,18 @@ Ou téléchargez l'archive depuis la page GitHub du projet.
 
 ### 2. Inclure Flasha dans votre page
 
-Copiez `flasha.css` et `flasha.js` dans votre projet, puis ajoutez :
+Conservez les dossiers `css/` et `js/` dans votre projet, puis ajoutez :
 
 ```html
-<link rel="stylesheet" href="flasha.css">
-<script src="flasha.js"></script>
+<link rel="stylesheet" href="css/flasha.css">
+<script src="js/flasha.js"></script>
 ```
 
 Pour la production, vous pouvez utiliser les fichiers minifiés :
 
 ```html
-<link rel="stylesheet" href="flasha.min.css">
-<script src="flasha.min.js"></script>
+<link rel="stylesheet" href="css/flasha.min.css">
+<script src="js/flasha.min.js"></script>
 ```
 
 > Les chemins sont à adapter à l'emplacement des fichiers dans votre projet.
@@ -83,12 +83,12 @@ Pour la production, vous pouvez utiliser les fichiers minifiés :
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exemple Flasha</title>
-  <link rel="stylesheet" href="flasha.min.css">
+  <link rel="stylesheet" href="css/flasha.min.css">
 </head>
 <body>
   <button id="notify">Afficher une notification</button>
 
-  <script src="flasha.min.js"></script>
+  <script src="js/flasha.min.js"></script>
   <script>
     document.querySelector('#notify').addEventListener('click', () => {
       Flasha.success('Enregistrement réussi !');
@@ -161,13 +161,17 @@ Les notifications supplémentaires sont automatiquement placées en attente lors
 
 ```text
 flasha-js/
-├── DOCUMENTATION.md
+├── css/
+│   ├── flasha.css
+│   └── flasha.min.css
+├── js/
+│   ├── flasha.js
+│   └── flasha.min.js
 ├── LICENSE
-├── flasha.css
-├── flasha.js
-├── flasha.min.css
-└── flasha.min.js
+└── README.md
 ```
+
+> Cette structure suppose que les fichiers ont été déplacés dans les dossiers `css/` et `js/` sur GitHub. Si ce n’est pas encore fait, réorganisez le dépôt pour que les chemins indiqués dans les exemples fonctionnent.
 
 Les fichiers non minifiés facilitent la lecture et la personnalisation du code ; les versions `.min.css` et `.min.js` sont destinées à une intégration plus compacte en production.
 
